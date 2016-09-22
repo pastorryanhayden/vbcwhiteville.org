@@ -1,0 +1,22 @@
+---
+layout: default
+---
+    <div class="blog-single">
+        <div class="blog-single-header">
+            <h2>{{page.title}}</h2>
+            <div class="blog-single-details"><p><i class="fa fa-calendar"></i> {{page.date_added | date: '%B %d, %Y'}} </p><p>|</p><p><i class="fa fa-user"></i> {{page.author_name}}</p><p>|</p><p><i class="fa fa-info-circle"></i> {{page.categories}}</p></div>
+        </div><!--/blog-single-header-->
+        {% if  page.featured_image %}
+        {% for img in page.featured_image %}
+        <img class="blog-single-featured-image" src="{{img.url}}" alt="">
+        {% endfor %}
+        {% else %}
+        <img class="blog-single-featured-image" src="{{site.default_blog_image}}" alt="">
+        {% endif %}
+        <div class="blog-single-body">
+           {% if page.body_content %}
+           {{page.body_content | markdownify }}
+           {% endif %}
+        </div><!--/blog-single-body-->
+        {% include share.html %}
+    </div><!--/blog-single-->

@@ -1,0 +1,148 @@
+// Main Page Layout
+
+.ministriesContent 
+    min-height: 65vh
+    width: 90%
+    max-width: 1200px
+    margin-bottom: 40px
+    margin-top: 40px
+    display: flex
+    flex-wrap: wrap
+    margin-left: auto
+    margin-right: auto
+    justify-content: space-between
+
+// Menu (Disapears on small screen sizes)
+
+.ministriesContent__menu
+    background: $dark-gray 
+    text-align: center
+    height: 300px
+    display: none
+    @include breakpoint(large)
+        display: block
+        width: 20%
+    margin-bottom: 20px
+    h5
+        color: $coffee
+        text-align: center
+        width: 100%
+        padding-top: 10px
+        padding-bottom: 10px
+        border-bottom: 1px solid $coffee
+    ul
+        width: 100%
+        text-align: center
+    ul li a 
+        color: lighten($coffee,20%)
+        text-align: center
+        width: 100%
+
+// Main Content
+    
+.ministriesContent__content 
+    @include breakpoint(small)
+        min-height: 65vh
+        background: $coffee
+        border: 10px solid $dark-gray
+        width: 100%
+    @include breakpoint(medium)
+        width: 65%
+    @include breakpoint(large)
+        width: 50%
+
+// Sidebar
+
+.ministriesContent__content__sidebar 
+    width: 100%
+    color: $coffee
+    @include breakpoint(medium)
+        width: 30%
+    @include breakpoint(large)
+        width: 25%
+        border-top: none
+
+
+
+.ministriesContent__content__pageHeader 
+    @include grid-column(12)
+    margin-top: 30px
+
+
+.ministriesContent__content__pageHeader h1 
+    font-size: 2.5em
+    border-bottom: 1px solid $dark-gray
+    margin-bottom: 30px
+
+.ministriesContent__content__pageHeader h1 span 
+    color: $primary-color
+
+.ministriesContent__content__content 
+    @include grid-column(12)
+
+    
+
+    
+.ministriesContent__content__basic-info 
+    display: flex
+    background: $dark-gray
+    flex-wrap: wrap
+    color: $white
+    width: 100%
+    padding: 20px
+    margin-bottom: 30px
+
+    div h5 
+        color: $coffee
+        border-bottom: 1px dotted $white
+    
+    div p 
+        color: $white
+        margin-bottom: 0
+    
+
+    .details 
+        border-right: none
+        width: 100%
+        padding-right: 10px
+        margin-bottom: 30px
+        @include breakpoint(500px)
+            width: 35%
+            border-right: 1px solid $white
+            margin-bottom: 0
+    .leadership 
+        padding-left: 0
+        width: 100%
+        @include breakpoint(500px)
+            padding-left: 10px
+            width: 65%
+
+        img 
+            float: right
+            margin-left: 10px
+        
+.ministriesContent__content__photos 
+    background: darken($coffee, 25%)
+    padding: 15px
+    margin-bottom: 20px
+
+    h2 
+        width: 100%
+        border: none
+    
+.ministriesContent__content__photos__thumbnails 
+    display: flex
+    justify-content: space-between
+
+
+// Sidebar Specific Styles
+
+.ministriesContent__content__sidebar 
+    div
+        margin-bottom: 40px
+    .logo img
+        border: 10px solid $dark-gray
+    .events
+        background: $dark-gray
+        padding: 15px
+    

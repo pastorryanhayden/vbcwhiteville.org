@@ -1,0 +1,61 @@
+.blog-list
+    max-width: 1200px
+    margin-left: auto
+    margin-right: auto
+    margin-top: -20px
+    padding-top: 30px
+    padding-bottom: 30px
+    background: RGBA(246, 242, 237, 1.00)
+ 
+.blog-list-title
+    width: 400px
+    margin-right: auto
+    margin-left: auto
+    text-align: center
+    // background: lighten($coffee, 10%)
+    background: $dark-gray
+    color: $white 
+    border: 5px solid $dark-gray
+    margin-bottom: 30px
+    padding: 10px
+    h3
+        font-size: 1.3em
+
+.blog-list-item 
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 30px
+    display: flex 
+    flex-direction: column
+    border: 5px solid $dark-gray
+    @include breakpoint(850px)
+        flex-direction: row 
+        height: 198px
+.blog-list-featured-image
+    border-bottom: 5px solid $dark-gray 
+    @include breakpoint(850px)
+        width: 352px
+        margin-bottom: 0
+        border-bottom: none
+        border-right: 5px solid $dark-gray
+
+.blog-list-item-content
+    padding: 20px
+    background: #ffffff
+    flex-grow: 1
+    h3 
+        margin-bottom: 0
+        font-size: 16px
+        line-height: 22px
+    p.details
+        font-size: 12px
+        line-height: 20px
+        color: darken($light-gray, 25%)
+    p 
+        margin-bottom: 10px
+        font-size: 14px
+        line-height: 20px
+    a.button
+        font-size: 12px
+        margin-top: 20px

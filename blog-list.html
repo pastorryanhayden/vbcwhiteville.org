@@ -1,0 +1,26 @@
+---
+layout: default
+---
+<div class="blog-list">
+    <div class="blog-list-title">
+    <h2>Our Blog</h2>
+    </div><!--/blog-list-title-->
+    {% for post in site.data.blog %}
+    <div class="blog-list-item">
+        {% if post.featured_image %}
+                {% for img in post.featured_image %}
+        <img class="blog-list-featured-image" src="{{img.url}}" alt="">
+        {% endfor %}
+            {% else %}
+            <img class="blog-list-featured-image" src="{{site.default_blog_image}}" alt="">
+            {% endif %}
+        <div class="blog-list-item-content">
+            <h3><a href="{{ post.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}">{{post.title}}</a></h3>
+            <p class="details"><i class="fa fa-calendar"></i> {{post.date_added| date: "%B %-d, %Y" }} | <i class="fa fa-user"></i> {{post.author_name}}</p>
+             {{post.body_content | markdownify | truncatewords: 25 }}
+             <br>
+            <a href="{{ post.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}" class="button">Read More</a>
+        </div><!--/blog-list-item-content-->
+    </div><!--/blog-list-item-->
+    {% endfor %}
+</div><!--/blog-list-->

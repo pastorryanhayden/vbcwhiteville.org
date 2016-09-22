@@ -1,0 +1,127 @@
+.home
+    max-width: 1200px
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+    padding-top: 25px
+
+    .hero
+        background: $dark-gray
+        padding: 20px
+        display: flex
+        flex-direction: column
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50)
+        @include breakpoint(960)
+            flex-direction: row
+        img
+            max-width: 595px
+            width: 100%
+            max-height: 305px
+            border: 1px solid $coffee
+            margin-left: auto
+            margin-right: auto
+            flex-shrink: 0
+        .hero-content
+            color: $coffee
+            padding: 0 20px 0 20px
+            max-width: 595px
+            margin-left: auto
+            margin-right: auto
+            h3
+                border-bottom: 1px solid $coffee
+            a.button.hollow
+                color: $coffee
+                border-color: $coffee
+                margin-top: 20px
+                margin-bottom: 0
+    .recent-sermons
+        padding-top: 30px
+        text-align: center
+        h2
+            background: $coffee
+            width: 300px
+            margin-left: auto
+            margin-right: auto
+            font-size: 28px
+            font-style: italic
+            margin-bottom: 20px
+            box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50)
+        .sermons-wrapper
+            display: flex
+            justify-content: space-around
+            flex-wrap: wrap
+            background: transparent 
+            .sermon
+                width: 270px
+                height: 152px
+                border: 1px solid $coffee
+                display: flex
+                flex-direction: column
+                justify-content: flex-end
+                background-size: cover
+                box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50)
+                margin-bottom: 30px
+                @include breakpoint (950px)
+                    margin-bottom: 0
+                .sermon-text
+                    background: rgba(0,0,0,0.70)
+                    width: 100%
+                    height: 52px
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                h4
+                    line-height: 14px
+                    margin-bottom: 0
+                h4 a
+                    font-size: 15px
+                    font-weight: bold
+                    color: $coffee
+                p.text
+                    font-size: 12px
+                    font-style: italic
+                    margin-bottom: 0
+                    color: darken($coffee, 15%)
+.features
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    padding-top: 40px
+    padding-bottom: 40px
+    .home-events, .home-articles
+        max-width: 420px
+        margin-left: auto
+        margin-right: auto
+        flex-grow: 1
+        background: $dark-gray
+        box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50)
+        margin-bottom: 30px
+        h3
+            background: $coffee
+            text-align: center
+            padding-top: 15px
+            padding-bottom: 15px
+            font-style: italic
+    .event, .article
+        display: flex
+        padding: 15px
+        img
+            width: 90px
+            height: 51px
+            margin-right: 15px
+            flex-shrink: 0
+    .event-info, .article-info
+        max-width: 280px 
+        h4
+            margin-bottom: 0
+            margin-top: -5px
+            font-size: 1.3em
+        h4 a
+            color: $coffee
+        p
+            color: darken($coffee, 15%)
+    .home-events
+        margin-bottom: 30px
+
+
+

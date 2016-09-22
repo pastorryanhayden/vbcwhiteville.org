@@ -1,0 +1,74 @@
+
+.about-page
+    max-width: 1200px
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+
+
+    img.featured_image 
+        border: 10px solid $dark-gray
+        width: 100%
+        max-width: 850px
+        margin-left: auto
+        margin-right: auto
+        text-align: center
+        display: block
+
+    .about-header 
+        // max-width: 500px
+        margin-top: 25px
+        font-weight: bold
+        color: $coffee
+        background: rgba($dark-gray, .8)
+        padding: 5px
+        padding-left: 10px
+
+        span
+            color: darken($coffee, 25%)
+    .content
+        display: flex
+        justify-content: space-between
+        flex-direction: column
+        @include breakpoint(large)
+            flex-direction: row
+
+    .main-content
+        border: 10px solid $dark-gray
+        background-color: lighten($coffee , 10%)
+        min-height: 50vh
+        margin-bottom: 50px
+        margin-top: 25px
+        padding: 15px
+        @include breakpoint(large)
+            border: 10px solid $dark-gray
+            max-width: 75%
+
+    .sidebar 
+        margin-bottom: 50px
+        margin-top: 25px
+        padding-right: 0
+        padding-left: 0
+
+        @include breakpoint(large)
+            padding-right: 0
+            padding-left: 0
+            width: 25%
+            margin-left: 3%
+        
+        h3.sidebar-header 
+            background: $coffee
+            width: 100%
+            text-align: center
+            padding-top: 5px
+            padding-bottom: 5px
+            font-weight: bold
+            font-size: 20px
+
+        div.sidebar-text    
+            background-color: $dark-gray
+
+            li a 
+                color: $coffee
+                text-decoration: underline
+

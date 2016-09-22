@@ -1,0 +1,91 @@
+<div class="off-canvas-wrapper">
+<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+<div class="off-canvas-content" data-off-canvas-content>  
+<div class="content-wrapper">  
+
+<div class="site-wrapper">
+<nav class="main">
+<div class="nav-1">    
+    <ul class="utility-1">
+
+    </ul><!--/utility-1-->
+    <ul class="nav-1 dropdown" data-dropdown-menu>
+        <li><a href="{{site.url}}welcome.html">Welcome</a></li>
+        <li><a href="#">About Us</a>
+            <ul class="menu">
+                {% for item in site.data.abouts %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+            </ul>
+        </li>
+        <li><a href="#">Ministries</a>
+            <ul class="menu">
+                {% for item in site.data.ministries %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</div><!--nav-1-->
+<h1 class="logo"><a href="{{site.url}}/">Hartwell <span>Baptist Church</span></a></h1>
+<div class="nav-2">
+    <ul class="utility-2">
+        <li><a href="{{site.url}}info.html .service-times" data-featherlight="ajax"><i class="fa fa-clock-o"></i> Service Schedule</a></li>
+        <li><a href="{{site.url}}info.html .contact" data-featherlight="ajax"><i class="fa fa-phone-square"></i> Contact Info</a></li>
+    </ul><!--/utility-2-->
+    <ul class="nav-2 dropdown" data-dropdown-menu>
+        <li><a href="{{site.url}}calendar.html">Events</a></li>
+        <li><a href="#">Media</a>
+        <ul class="menu">
+            <li><a href="{{site.url}}sermons.html">Sermons</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Contact Us</a></li>
+    </ul>
+</div><!--/nav-2-->
+</nav>
+<nav class="mobile">
+    <h1 class="logo"><a href="#">Hartwell <span>Baptist Church</span></a></h1>
+    <div class="main-mobile-buttons">
+        <a href="{{site.url}}info.html .info-box" data-featherlight="ajax"><i class="fa-question-circle fa"></i><br>Info</a>
+        <button type="button" data-toggle="offCanvas" class="side-menu"> <i class="fa-reorder fa"></i><br>Menu</button>
+    </div>
+</nav>
+<div class="off-canvas position-right mobile-sidebar" id="offCanvas" data-off-canvas data-position="right">
+    <ul class="vertical side-menu menu" data-accordion-menu>
+    <li><a href="{{site.url}}/">HOME</a></li>
+    <li><a href="{{site.url}}welcome.html">Welcome</a></li>
+    <li><a href="#">ABOUT US</a>
+        <ul class="menu">
+            {% for item in site.data.abouts %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.title | datapage_url: 'about-us' | prepend: site.baseurl | prepend: site.url }}">{{item.title}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+        </ul>
+    </li><!--/End of About Us-->
+    <li><a href="#">MINISTRIES</a>
+        <ul class="menu">
+            {% for item in site.data.ministries %}
+                    {% if  item.Exclude_from_menus != true %}
+                    <li><a href="{{ item.name | datapage_url: 'ministries' | prepend: site.baseurl | prepend: site.url }}">{{item.name}}</a></li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+    </li><!--/ministries-->
+    <li><a href="{{site.url}}calendar.html">CALENDAR</a></li>
+    <li><a href="#">MEDIA</a>
+        <ul class="menu">
+            <li><a href="#">Sermons</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Gallery</a></li>
+        </ul>
+    </li><!--/media-->
+    <li><a href="#">CONTACT US</a></li>
+</ul><!--.dropdown menu --></div><!--slideout menu-->

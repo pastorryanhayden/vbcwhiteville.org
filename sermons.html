@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+<div class="sermonslistContent__header">
+    <div class="wrapper">
+        <h1>Sermons</h1>
+        <h3>The Preaching Ministry of {{site.data.info[0].Church_Name}}</h3>
+        </div><!--/sermonslistContent__header-->
+    </div>
+<div class="sermons-wrapper">
+    <div class="sermons-list">
+        {% for sermon in site.data.sermons %}
+        <div class="sermon-listing">
+            <div class="sermon-featured-image">
+                {% if sermon.series_featured_image %}
+                {% for img in sermon.series_featured_image %}
+                <img src="{{img.url}}" alt="{{sermon.seris_title}}">
+                {% endfor %}
+                {% else %}
+                <img src="http://placehold.it/1920x1080" alt="">
+                {% endif %}
+                
+            </div><!--/featured-image-->
+            <div class="sermon-info">
+                <h3><a href="{{ sermon.title | datapage_url: 'sermons' | prepend: site.baseurl | prepend: site.url }}">{{sermon.title}}</a></h3>
+                <p>{% if sermon.speaker_name %}<i class="fa fa-user"></i> {{sermon.speaker_name}} |{% endif %} {% if sermon.bible_text%}<i class="fa fa-book"></i> {{sermon.bible_text}} |
+                {% else %}<i class="fa fa-book"></i> Various |{% endif %}
+  <i class="fa fa-calendar"></i> {{sermon.date | date: "%b %d, %y"}}</p>
+            </div><!--/info-->
+            <div class="sermon-buttons">
+                {% if  sermon.sermon_mp3%}{% for item in sermon.sermon_mp3 %}
+                <a href="{{item.url}}">{% endfor %}<i class="fa fa-file-audio-o"></i></a>{% endif %}
+               {% if  sermon.handout%}{% for item in sermon.handout %}
+                <a href="{{item.url}}">{% endfor %}<i class="fa fa-file-pdf-o"></i></a>{% endif %}
+                {% if  sermon.slides%}{% for item in sermon.slides %}
+                <a href="{{item.url}}">{% endfor %}<i class="fa fa-file-powerpoint-o"></i></a>{% endif %}
+            </div><!--/sermon-buttons-->
+        </div><!--/sermon-listing-->
+        {% endfor %}
+        
+       
+    </div><!--/sermons-list-->
+
+</div><!--/sermons-wrapper--->
+{% include serieslist.html %}
+

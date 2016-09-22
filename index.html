@@ -1,0 +1,79 @@
+---
+layout: default
+---
+<div class="home">
+    <div class="hero">
+    {% if site.data.home[0].Main_Image[0] %}
+        <img src="{{ site.data.home[0].Main_Image[0].url }}" alt="">
+    {% else %}
+        <img src="http://sitesforchurch.s3.amazonaws.com/cinci.jpg" alt="">
+    {% endif %}
+        <div class="hero-content" id="app">
+        <h3>{{ site.data.home[0].Intro_Heading }}</h3>
+              <p>{{ site.data.home[0].Intro_Text | markdownify }}</p>
+            <a href="{{site.url}}welcome.html" class="button hollow">Learn About Visiting</a>
+        </div><!-- hero-content -->
+    </div><!-- hero -->
+    <div class="recent-sermons">
+        <h2>Recent Sermons</h2>
+        <div class="sermons-wrapper">
+            {% for sermon in site.data.sermons limit: 3 %}
+            {% if  sermon.series_featured_image %}
+            {% for img in sermon.series_featured_image %}
+                <div class="sermon" style="background: url('{{img.url}}'); background-size: contain;">
+                {% endfor %}
+            {% else %}
+            <div class="sermon" style="background: url('{{site.url}}assets/img/series1.jpg');  background-size: contain;">
+            {% endif %}
+            
+                <div class="sermon-text">
+                <h4><a href="{{ sermon.title | datapage_url: 'sermons' | prepend: site.baseurl | prepend: site.url }}">{{sermon.title}}</a></h4>
+                <p class="text">{{sermon.bible_text}}</p>
+                </div><!--/sermon-text-->
+                </div><!--/sermon-->
+            {% endfor %}
+                
+        </div><!-- sermons-wrapper -->
+    </div><!-- recent-sermons -->
+    <div class="features">
+        <div class="home-events">
+            <h3>Upcoming Events</h3>
+            {% for event in site.data.events limit: 4 %}
+            <div class="event">
+                {% if  event.featured_image %}
+                {% for img in event.featured_image %}
+                <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}"><img src="{{img.url}}" alt=""></a>
+                {% endfor %}
+                {% else %}
+                <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}"><img src="{{site.default_calendar_image}}" alt=""></a>
+                {% endif %}
+                <div class="event-info">
+                    <h4><a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}">{{event.event_name | truncatewords: 6}}</a></h4>
+                    <p class="date">{{event.DateTime | date: "%b %d, %y"}}</p>
+                </div><!--event-info-->
+            </div><!-- event -->
+            {% endfor %}
+        </div><!-- home-events -->
+        <div class="home-articles">
+            <h3>Recent Articles</h3>
+            {% for article in site.data.blog limit: 4 %}
+            <div class="article">
+                {% if  article.featured_image %}
+                {% for img in article.featured_image %}
+                <a href="{{ article.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}"><img src="{{img.url}}" alt=""></a>
+                {% endfor %}
+                {% else %}
+                <a href="{{ article.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}"><img src="{{site.default_blog_image}}" alt=""></a>
+                {% endif %}
+                <div class="article-info">
+                    <h4><a href="{{ article.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}">{{article.title}}</a></h4>
+                    <p class="author">{{article.author_name}}, <span class="date">{{article.date_added | date: "%b %d" }}</span></p>
+                </div><!--article-info-->
+            </div><!-- article -->
+            {% endfor %}
+            
+        </div><!-- home articles -->
+    </div><!-- features -->
+
+
+</div><!-- home wrapper-->

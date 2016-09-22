@@ -1,0 +1,132 @@
+.events
+    h4 
+        text-align: center 
+        border-bottom: 1px solid darken($coffee, 10%)
+        padding-bottom: 10px
+        margin-bottom: 20px
+    .event-lister
+        display: flex 
+        justify-content: space-between
+        padding-bottom: 10px
+        margin-bottom: 20px
+        border-bottom: 1px dotted darken($coffee, 10%)
+        height: 150px
+    .event-lister:last-child
+        border-bottom: none
+        margin-bottom: none
+    .calendar-thumb 
+        width: 60px
+        height: 60px
+        background: lighten($coffee, 15%)
+        color: $dark-gray
+        display: flex 
+        flex-direction: column
+        text-align: center
+        justify-content: space-around
+        h5.date
+            background: darken($coffee, 10%)
+            padding-top: 3px
+            padding-bottom: 3px
+            font-size: 1.3em
+            color: $dark-gray
+        p.month
+            line-height: .6em
+            font-size: .8em
+            font-weight: bold
+            text-transform: uppercase
+    .event-lister-content  
+        margin-left: 20px
+        h5
+            margin-bottom: 0
+        h5 a 
+                color: darken($coffee, 10%)
+        p
+            font-size: .8em
+        a.button.hollow
+            color: $coffee
+            border-color: $coffee
+            font-size: .8em
+
+
+.events-list 
+    max-width: 1200px
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+.event-listing
+    max-width: 370px
+    background: url(http://placehold.it/1920x1080) no-repeat top center
+    background-size: contain
+    background-color: lighten($coffee, 15%)
+    padding-top: 148px 
+    padding-left: 10px
+    padding-right: 10px
+    padding-bottom: 10px
+    margin-left: 20px
+    margin-bottom: 20px
+    box-shadow: 2px 2px 4px black
+    border: 8px solid $dark-gray
+    .event-content
+        background: #ffffff
+        min-height: 300px
+        padding-left: 10px
+        padding-right: 10px
+        .event-header
+            display: flex 
+            justify-content: space-between
+            padding-left: 15px
+            padding-right: 15px
+            align-items: center
+            height: 61px
+            border-bottom: 1px solid #eeeeee
+            p 
+                font-size: 12px
+                line-height: 14px
+                margin-bottom: 0
+                display: flex 
+                align-items: center
+            i 
+                display: block
+                height: 28px
+                float: left
+                margin-right: 10px
+                line-height: 28px
+        .event-body 
+            padding-top: 30px
+            padding-left: 20px
+            padding-right: 20px
+            padding-bottom: 30px
+            min-width: 300px
+
+            h2 
+                font-size: 20px
+                line-height: 24px
+                a 
+                    color: #333333
+            p 
+                font-size: 14px
+                line-height: 21px
+        .event-cta 
+            display: flex 
+            justify-content: space-between 
+            align-items: center
+            padding-left: 15px
+            padding-right: 15px
+            border-top: 1px solid #eeeeee
+            height: 61px
+            a.button 
+                margin-bottom: 0
+                background: darken($coffee, 10%)
+                text-transform: uppercase
+                font-weight: bold
+            a.share
+                font-size: 13px
+                text-transform: uppercase
+                color: #999999
+                i 
+                    color: darken($coffee, 10%)
+            

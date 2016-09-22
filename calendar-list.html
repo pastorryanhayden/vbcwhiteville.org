@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<div class="calendar-list">
+<div class="calendar-header">
+    <div class="wrapper">
+    <div class="calendar-header-text">
+        <h1>Calendar</h1>
+        <h3>Upcoming events in the life and ministry of our church.</h3>
+    </div><!--/calendar-header-text-->
+    <img src="{{site.url}}assets/img/Calendar_icon.png" alt=""> 
+    </div><!--/wrapper-->
+</div><!--/calendar-header-->
+<div class="events-list">
+    {% for event in site.data.events %}
+    {% if  event.featured_image %}
+    {% for img in event.featured_image %}
+    <div class="event-listing" style="background: url('{{img.url}}') no-repeat top center; background-size: contain; background-color: #d8d5c3;">
+    {% endfor %}
+    {% else %}
+    <div class="event-listing" style="background: url('{{site.default_calendar_image}}') no-repeat top center; background-size: contain; background-color: #d8d5c3;">
+    {% endif %}
+        <div class="event-content">
+            <div class="event-header">
+                <p class="event-date"><i class="fa fa-calendar"></i> {{event.DateTime | date: "%B %d, %y"}}</p>
+                {% if event.location %}
+                <p class="event-location"><i class="fa fa-map-marker"></i> {{event.location}}</p>
+                {% endif %}
+            </div><!--/event-header-->
+            <div class="event-body">
+                <h2><a href="#">{{event.event_name}}</a></h2>
+                <p>{{event.description}}</p>
+            </div><!--/event-body-->
+            <div class="event-cta">
+                <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}" class="button">More Info</a>
+                <!--<a href="#" class="share"><i class="fa fa-share-alt"></i> Share</a>-->
+            </div><!--/event-cta-->
+        </div><!--/event-content-->
+    </div><!--/event-listing-->
+    {% endfor %}
+    
+</div><!--/events-list-->
+</div><!--/calendar-list--> 

@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div class="aboutContent">
+    <div class="aboutContent__menu" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+        {% include about-menu.html %}
+        </div><!--/sticky-->
+    </div><!--/about-menu-->
+    <div class="aboutContent__content" id="content">
+
+        <div class="aboutContent__content__pageHeader">
+        <img src="{{site.default_about_image}}" alt="">
+        <h1>About Us: <span>Our Beliefs</span></h1>
+        </div><!--/page-header-->
+    <article class="aboutContent__content__content">
+       {% for item in site.data.beliefs %}
+       <div class="belief">
+        <h3><i class="fa {{item.icon}}"></i> {{item.title}}</h3>
+        {% if item.Content %}
+            {{item.Content | markdownify}}
+        {% endif %}
+        </div><!--/belief-->
+       {% endfor %}
+         
+    </article>
+    {% include about-sidebar.html %}
+    </div><!--/main-content-->
+</div><!--/about-content-->

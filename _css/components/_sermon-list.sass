@@ -1,0 +1,73 @@
+.sermons-wrapper
+    background: RGBA(246, 242, 237, 1.00)
+    max-width: 1200px
+    margin-left: auto
+    margin-right: auto
+
+    h2
+        padding-top: 20px 
+
+.sermons-list
+    max-width: 1000px
+    margin-left: auto
+    margin-right: auto
+    width: 90%
+    padding-top: 20px
+    padding-bottom: 20px
+.sermon-listing
+    display: flex
+    align-items: center  
+    padding: 10px
+    background: $white
+    margin-bottom: 20px
+    flex-direction: column
+    @include breakpoint(medium)
+        flex-direction: row
+
+    .sermon-featured-image
+        margin-bottom: 30px
+        @include breakpoint(medium) 
+            width: 20%
+            margin-bottom: 0    
+    .sermon-info 
+        padding-left: 20px
+        padding-right: 20px
+        margin-bottom: 30px
+        text-align: center 
+        @include breakpoint(medium)
+            width: 60%
+            margin-bottom: 0
+            text-align: left 
+        h3
+            font-size: 22px
+            line-height: 22px
+            margin-bottom: 0
+            margin-bottom: 5px
+        p 
+            font-size: 11px
+            line-height: 22px
+            margin-bottom: 0
+    .sermon-buttons
+        display: flex
+        justify-content: space-around 
+        width: 100%
+        margin-bottom: 30px
+        @include breakpoint(medium)
+            width: 20%
+            margin-bottom: 0
+        a 
+            font-size: 26px
+.serieslistContent
+    background: $white 
+    max-width: 1200px
+    margin-left: auto
+    margin-right: auto 
+    width: 90%
+    h2 
+        text-align: center
+        padding-top: 30px
+        margin-bottom: 30px
+    a 
+        color: $white  
+    .serieslistwrapper
+        max-width: 1200px
