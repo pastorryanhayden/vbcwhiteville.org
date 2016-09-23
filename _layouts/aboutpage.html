@@ -7,8 +7,6 @@ layout: default
     <h2 class="about-header"> About Us: <span>{{page.title}}</span></h2>
     {% if page.featured_image[0].url %}
     <img src="{{page.featured_image[0].url}}" alt="" class="featured_image">
-    {% else %}
-    <img src="http://placehold.it/1920x1080" alt="" class="featured_image">
     {% endif %}
     </div><!-- /header -->
     <div class="content">
@@ -17,16 +15,6 @@ layout: default
         {{page.body_content | markdownify }}
         {% endif %}
     </div><!--/main-content-->
-    <div class="sidebar">
-        <h3 class="sidebar-header">More About Us</h3>
-        <div class="sidebar-text">
-            <ul class="menu vertical">
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-                <li><a href="#">Item</a></li>
-            </ul>
-        </div><!--/sidebar-text-->
-    </div><!--/sidebar-->
+    {% include about-sidebar.html %}
     </div><!-- content -->
 </div><!--/wrapper-->
