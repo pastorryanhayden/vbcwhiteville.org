@@ -1,5 +1,5 @@
 # What's the name of the church?
-title: Harwell Baptist Church
+title: Victory Baptist Church
 # Give a brief description of the church
 description: > # this means to ignore newlines until "baseurl:"
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus blanditiis odio corrupti, 
@@ -11,28 +11,13 @@ baseurl: "" # the subpath of your site, e.g. /blog
 
 url: "http://localhost:3000/" # the base hostname & protocol for your site | Switch to http://cranesvillebiblechurch.com/" Before running Glynn.  Afterwards change it back to http://localhost:4000/
 
-# This is the path to the default images.  If you add different default images you can change them here.
-default_header_image: "assets/default_header.jpg"
-default_sermon_image: "assets/default_header.jpg"
-default_blog_image: "http://sitesforchurch.s3.amazonaws.com/blog-image.jpg"
-default_about_image: "assets/default_header.jpg"
-default_calendar_image: "http://sitesforchurch.s3.amazonaws.com/calendar_default.jpg"
 
- 
+
 # Airtable API Stuff
 airtable:
   apikey: "keyRTLlrVS02vC3Vx"
-  blog: "appemSttDE2EUGHNP"
-  sermons: "appR4YoNuehPBcHi9"
-  series: "appR4YoNuehPBcHi9"
-  ministries: "appcRxPIIFjfDWFvN"
-  photos: "appcRxPIIFjfDWFvN"
-  events: "appcRxPIIFjfDWFvN"
-  abouts: "appAOZmfosCoiBvMZ"
-  welcome: "appnwC24vFWNASZKp"
-  info: "appQJ4n8Mrn65D6c0"
-  contact: "appWB6NKMgmtgDURn"
-  missionaries: "appIfFWAjJoPWDoyp"
+  comingsoon: "appsa1KwdyKL6rbNz"
+  
 
 # LEAVE EVERYTHING ELSE ALONE!!
 
@@ -46,37 +31,11 @@ exclude:
   - gulpfile.js 
   - bower_components
 keep_files:
+  - css
   - assets/css
+  - assets/js 
 
-
-page_gen:
-  - data: 'ministries'
-    template: 'ministries'
-    name: 'name'
-    dir: 'ministries'
-  - data: 'series'
-    template: 'series'
-    name: 'title'
-    dir: 'series'
-  - data: 'sermons'
-    template: 'sermon'
-    name: 'title'
-    dir: 'sermons'
-  - data: 'blog'
-    template: 'blog-entry'
-    name: 'title'
-    dir: 'blog-posts'
-  - data: 'abouts'
-    template: 'aboutpage'
-    name: 'title'
-    dir: 'about-us'
-  - data: 'events'
-    template: 'event'
-    name: 'event_name'
-    dir: 'events'
 
 ftp_host: 'biblebaptistmattoon.org'
-ftp_dir: 'hartwellbaptistchurch.org/'
+ftp_dir: 'coming-soon/'
 ftp_passive: false
-ftp_username: 'ryahay11'
-ftp_password: '@88Volvocj'

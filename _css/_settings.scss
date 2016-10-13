@@ -1,42 +1,70 @@
 //  Foundation for Sites Settings
 //  -----------------------------
-@import '../bower_components/foundation-sites/scss/util/util';
+//
+//  Table of Contents:
+//
+//   1. Global
+//   2. Breakpoints
+//   3. The Grid
+//   4. Base Typography
+//   5. Typography Helpers
+//   6. Abide
+//   7. Accordion
+//   8. Accordion Menu
+//   9. Badge
+//  10. Breadcrumbs
+//  11. Button
+//  12. Button Group
+//  13. Callout
+//  14. Close Button
+//  15. Drilldown
+//  16. Dropdown
+//  17. Dropdown Menu
+//  18. Flex Video
+//  19. Forms
+//  20. Label
+//  21. Media Object
+//  22. Menu
+//  23. Meter
+//  24. Off-canvas
+//  25. Orbit
+//  26. Pagination
+//  27. Progress Bar
+//  28. Reveal
+//  29. Slider
+//  30. Switch
+//  31. Table
+//  32. Tabs
+//  33. Thumbnail
+//  34. Title Bar
+//  35. Tooltip
+//  36. Top Bar
+
+@import 'foundation-sites/scss/util/util';
+@import url('https://fonts.googleapis.com/css?family=Quando');
 
 
-// 1. FONTS
-// To Change the fonts 
-// a. add the @import rule here: (get this from Google Fonts)
-@import 'https://fonts.googleapis.com/css?family=Martel';
-// b. Change these variables.
-$body-font-family:'Martel', serif;
-$header-font-family: $body-font-family;
- 
+// 1. Global
+// ---------
 
-// 2. Colors
-// The variables below control the color on the whole site.  Changing them changes the entire sites look and feel.
+$global-font-size: 100%;
+$global-width: rem-calc(1200);
+$global-lineheight: 1.5;
 $foundation-palette: (
-   primary: #319826,
-  secondary: #5C3F23,
-  success: #3C6E71,
-  warning: #4B4E6D,
-  alert: #319827,
-
+  primary: #617B95,
+  secondary: #777,
+  success: #3adb76,
+  warning: #ffae00,
+  alert: #ec5840,
 );
-$text-color: #1F1F15;
 $light-gray: #e6e6e6;
-$medium-gray: #B8B8AD;
-$dark-gray: #333533;
-$black: #0e0b08;
+$medium-gray: #cacaca;
+$dark-gray: #8a8a8a;
+$black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-
-
-
-// UNLESS YOU KNOW WHAT YOU ARE DOING LEAVE THE REST OF THIS STUFF ALONE!
-//________________________________________________
-
-
+$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -46,9 +74,7 @@ $global-radius: 0;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
-$global-font-size: 100%;
-$global-width: rem-calc(1200);
-$global-lineheight: 1.5;
+
 @include add-foundation-colors;
 
 // 2. Breakpoints
@@ -78,7 +104,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Quando', serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;

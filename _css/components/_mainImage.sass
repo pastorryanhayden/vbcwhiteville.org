@@ -1,0 +1,39 @@
+.header 
+    height: 100vh
+    @include breakpoint(medium)
+        height: 60vh
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    align-items: center
+    background: url(http://sitesforchurch.s3.amazonaws.com/headerbackground.png) no-repeat center center
+    background-size: cover
+    color: $white
+    position: relative
+
+    .socialbar
+        list-style-type: none
+        display: flex
+        justify-content: space-between
+        position: absolute
+        top: 20px
+        right: 20px
+        li 
+            margin-left: 30px
+            &:first-child
+                margin-left: none
+        li a 
+            color: $white
+            font-size: 20px
+    h1 
+        font-size: 40px
+        text-transform: uppercase
+        max-width: 80%
+        text-align: center
+    p 
+        width: 70%
+        text-align: center
+        font-size: 18px
+    h3 
+        margin-top: 30px
+        margin-bottom: 30px

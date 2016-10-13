@@ -1,79 +1,60 @@
 ---
 layout: default
 ---
-<div class="home">
-    <div class="hero">
-    {% if site.data.home[0].Main_Image[0] %}
-        <img src="{{ site.data.home[0].Main_Image[0].url }}" alt="">
-    {% else %}
-        <img src="http://sitesforchurch.s3.amazonaws.com/cinci.jpg" alt="">
-    {% endif %}
-        <div class="hero-content" id="app">
-        <h3>{{ site.data.home[0].Intro_Heading }}</h3>
-              <p>{{ site.data.home[0].Intro_Text | markdownify }}</p>
-            <a href="{{site.url}}welcome.html" class="button hollow">Learn About Visiting</a>
-        </div><!-- hero-content -->
-    </div><!-- hero -->
-    <div class="recent-sermons">
-        <h2>Recent Sermons</h2>
-        <div class="sermons-wrapper">
-            {% for sermon in site.data.sermons limit: 3 %}
-            {% if  sermon.series_featured_image %}
-            {% for img in sermon.series_featured_image %}
-                <div class="sermon" style="background: url('{{img.url}}'); background-size: contain;">
-                {% endfor %}
-            {% else %}
-            <div class="sermon" style="background: url('{{site.url}}assets/img/series1.jpg');  background-size: contain;">
-            {% endif %}
-            
-                <div class="sermon-text">
-                <h4><a href="{{ sermon.title | datapage_url: 'sermons' | prepend: site.baseurl | prepend: site.url }}">{{sermon.title}}</a></h4>
-                <p class="text">{{sermon.bible_text}}</p>
-                </div><!--/sermon-text-->
-                </div><!--/sermon-->
-            {% endfor %}
-                
-        </div><!-- sermons-wrapper -->
-    </div><!-- recent-sermons -->
-    <div class="features">
-        <div class="home-events">
-            <h3>Upcoming Events</h3>
-            {% for event in site.data.events limit: 4 %}
-            <div class="event">
-                {% if  event.featured_image %}
-                {% for img in event.featured_image %}
-                <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}"><img src="{{img.url}}" alt=""></a>
-                {% endfor %}
-                {% else %}
-                <a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}"><img src="{{site.default_calendar_image}}" alt=""></a>
-                {% endif %}
-                <div class="event-info">
-                    <h4><a href="{{ event.event_name | datapage_url: 'events' | prepend: site.baseurl | prepend: site.url }}">{{event.event_name | truncatewords: 6}}</a></h4>
-                    <p class="date">{{event.DateTime | date: "%b %d, %y"}}</p>
-                </div><!--event-info-->
-            </div><!-- event -->
-            {% endfor %}
-        </div><!-- home-events -->
-        <div class="home-articles">
-            <h3>Recent Articles</h3>
-            {% for article in site.data.blog limit: 4 %}
-            <div class="article">
-                {% if  article.featured_image %}
-                {% for img in article.featured_image %}
-                <a href="{{ article.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}"><img src="{{img.url}}" alt=""></a>
-                {% endfor %}
-                {% else %}
-                <a href="{{ article.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}"><img src="{{site.default_blog_image}}" alt=""></a>
-                {% endif %}
-                <div class="article-info">
-                    <h4><a href="{{ article.title | datapage_url: 'blog-posts' | prepend: site.baseurl | prepend: site.url }}">{{article.title}}</a></h4>
-                    <p class="author">{{article.author_name}}, <span class="date">{{article.date_added | date: "%b %d" }}</span></p>
-                </div><!--article-info-->
-            </div><!-- article -->
-            {% endfor %}
-            
-        </div><!-- home articles -->
-    </div><!-- features -->
 
 
-</div><!-- home wrapper-->
+  <div class="header" style="background: url({{site.data.welcome[0].main_image[0].url}}) no-repeat center center; background-size: cover;">
+         <ul class="socialbar">
+           {% if site.data.contact[0].Facebook %}<li><a href="{{site.data.contact[0].Facebook}}" target="blank"><i class="fa fa-facebook"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Twitter %}<li><a href="{{site.data.contact[0].Twitter}}" target="blank"><i class="fa fa-twitter"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Youtube %}<li><a href="{{site.data.contact[0].Youtube}}" target="blank"><i class="fa fa-youtube"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Church_email %}<li><a href="mailto:{{site.data.contact[0].Church_email}}" target="blank"><i class="fa fa-envelope"></i></a></li>{% endif %}
+           {% if site.data.contact[0].Phone_number %}<li><a href="tel:{{site.data.contact[0].Phone_number}}" target="blank"><i class="fa fa-phone"></i></a></li>{% endif %}
+        </ul><!--/socialbar-->
+      <img src="{{site.data.welcome[0].logo[0].url}}" alt="" class="logo">
+      <h1>{{site.data.welcome[0].main_heading}}</h1>
+      {{site.data.welcome[0].welcome_message | markdownify}}
+      <h3><i class="fa fa-arrow-down"></i></h3>
+    </div><!--/header-->
+    <div class="main">
+      <div class="services-info">
+          {{site.data.main[0].Main_message | markdownify }}
+      </div><!--/services-info-->
+      <div class="pastor-info">
+        <img src="{{site.data.pastor[0].Pastor_thumbnail[0].url}}" alt="">
+        <h3>{{site.data.pastor[0].Pastor_heading}}</h3>
+        <p>{{site.data.pastor[0].Pastor_content}}</p>
+        <p class="email"><i class="fa fa-envelope"></i> <a href="mailto:{{site.data.pastor[0].Pastor_email}}">{{site.data.pastor[0].Pastor_email}}</a></p>
+      </div><!--/pastor-info-->
+    </div><!--/main-->
+     <div class="map">
+       {{site.data.contact[0].Google_Maps_Embed}}
+    </div><!--/map-->
+    <div class="contact">
+      <div class="contact-content">
+          <h2>Contact Us</h2>
+          {{site.data.contact[0].Contact_Message | markdownify }}
+          <p class="email"><i class="fa fa-envelope"></i> <a href="mailto:{{site.data.contact[0].Church_email}}">{{site.data.contact[0].Church_email}}</a></p>
+            <ul class="address">
+              <li><i class="fa fa-phone"></i> <span>{{site.data.contact[0].Phone_number }} </span></li>
+              <li><i class="fa fa-map-marker"></i> <span>{{site.data.contact[0].Address_1}} {{site.data.contact[0].Address_2}}</span></li>
+              <li><span>{{site.data.contact[0].City }}, {{site.data.contact[0].State }} {{site.data.contact[0].Zip }} </span></li>
+              <li> 
+                  {% if site.data.contact[0].Facebook %}<a href="{{site.data.contact[0].Facebook}}"><i class="fa fa-facebook"></i></a> {% endif %}
+                    {% if site.data.contact[0].Twitter %}<a href="{{ site.data.contact[0].Twitter }}"><i class="fa fa-twitter"></i></a> {% endif %}
+                    {% if site.data.contact[0].Youtube %}<a href="{{ site.data.contact[0].Youtube }}"><i class="fa fa-youtube"></i></a> {% endif %}
+                  <a href="http://airtable.com"><i class="fa fa-gear"></i></a></li>
+          </ul><!--/address-->
+          <ul class="social">
+            
+          </ul><!--/social-->
+      </div><!--/contact-content-->
+    </div><!--/contact-->
+    <div class="photos">
+      <div class="photos-inner" id="sqr-gallery">
+      {% for img in site.data.images[0].Images  limit: 8 %}
+      
+      <img data-src="{{img.url}}" data-thumb="{{img.thumbnails.large.url }}" src="{{img.url}}"> 
+      {% endfor %}
+      </div><!--/photos-inner-->
+    </div><!--/photos-->

@@ -1,16 +1,29 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
+    <link rel='stylesheet' type='text/css' href='{{site.url}}assets/square-gallery.min.css'>
+    <link rel="stylesheet" href="{{site.url}}assets/css/main.css">
+	  <script type="text/javascript" src="{{site.url}}assets/square-gallery.min.js"></script>
+    <script src="https://use.fontawesome.com/00d641a760.js"></script>
+    <script type="text/javascript">
+		var DOMReady = function(a,b,c){b=document,c='addEventListener';b[c]?b[c]('DOMContentLoaded',a):window.attachEvent('onload',a)}
 
-  {% include head.html %}
-
+		DOMReady(function () {
+			new SquareGallery({
+				container: 'sqr-gallery',
+				
+			});
+		});
+	</script>
+  </head>
   <body>
-
-    {% include header.html %}
 
         {{ content }}
 
-    {% include footer.html %}
-
+    <script src="{{site.url}}assets/js/app.js"></script>
   </body>
-
 </html>

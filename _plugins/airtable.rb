@@ -1,2 +1,2 @@
 system 'node ./_airtable.js'
-system 'node-sass _css/app.scss _site/assets/css/app.css'
+system 'node-sass _css/main.scss assets/css/main.css'

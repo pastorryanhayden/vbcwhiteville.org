@@ -1,7 +1,7 @@
 #!/bin/bash
 
-path="/Users/ryanhayden/github/delanobaptist.org/";
-git_path="git@github.com:pastorryanhayden/delanobaptist.org.git";
+path="/Users/ryanhayden/github/cranesvillebiblechurch.com/";
+git_path="git@github.com:pastorryanhayden/cranesvillebiblechurch.com.git";
 need_build=false;
 #!/usr/bin/env bash
 
@@ -12,9 +12,14 @@ cd $path;
 echo "Update repo ...";
 git pull $git_path;
 
-echo "Update Data and Upload";
+echo "Get Data";
+node ./_airtable.js;
+echo "Build Jekyll";
+jekyll build
+echo "Compile SASS";
+node-sass _css/app.scss _site/assets/css/app.css;
+echo "Upload via glynn";
 glynn;
-
 # echo "Sync";
 # osascript upload.scpt;
 # echo -e '\n Complete all scripts';
