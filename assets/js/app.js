@@ -18736,6 +18736,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     hOffset: 12
   };
 
+
+ jQuery('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
+        jQuery('#canvas1').on('click', function () {
+            jQuery('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+        });
+
+        // you want to disable pointer events when the mouse leave the canvas area;
+
+        jQuery("#map_canvas1").mouseleave(function () {
+            jQuery('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+        });
+
   /**
    * TODO utilize resize event trigger
    */
@@ -19578,6 +19590,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         return [width, height, (innerW - width) / 2, (innerH - height) / 2];
     };
+
+
 
     /**
      * Fit image to the screen in width

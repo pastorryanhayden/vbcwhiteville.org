@@ -14,7 +14,7 @@ layout: default
       <img src="{{site.data.welcome[0].logo[0].url}}" alt="" class="logo">
       <h1>{{site.data.welcome[0].main_heading}}</h1>
       {{site.data.welcome[0].welcome_message | markdownify}}
-      <h3><i class="fa fa-arrow-down"></i></h3>
+      <h3><i class="fa fa-angle-double-down "></i></h3>
     </div><!--/header-->
     <div class="main">
       <div class="services-info">
@@ -27,8 +27,44 @@ layout: default
         <p class="email"><i class="fa fa-envelope"></i> <a href="mailto:{{site.data.pastor[0].Pastor_email}}">{{site.data.pastor[0].Pastor_email}}</a></p>
       </div><!--/pastor-info-->
     </div><!--/main-->
-     <div class="map">
+
+
+     <div class="photos">
+      <div class="photos-inner" id="sqr-gallery">
+      {% for img in site.data.images[0].Images  limit: 12 %}
+        <div class="photo"><a href="#" data-featherlight="{{img.url}}"><img src="{{img.thumbnails.large.url }}" alt=""></a></div>
+      {% endfor %}
+      
+      {% comment %}{% for img in site.data.images[0].Images  limit: 4 %}
+      
+      <img data-src="{{img.url}}" data-thumb="{{img.thumbnails.large.url }}" src="{{img.url}}"> 
+      {% endfor %}{% endcomment %}
+
+
+
+      </div><!--/photos-inner-->
+    </div><!--/photos-->
+    
+    
+     <div class="map" id="canvas1">
        {{site.data.contact[0].Google_Maps_Embed}}
+       <!--<script>
+          $(document).ready(function () {
+
+        // you want to enable the pointer events only on click;
+
+        $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none on doc ready
+        $('#canvas1').on('click', function () {
+            $('#map_canvas1').removeClass('scrolloff'); // set the pointer events true on click
+        });
+
+        // you want to disable pointer events when the mouse leave the canvas area;
+
+        $("#map_canvas1").mouseleave(function () {
+            $('#map_canvas1').addClass('scrolloff'); // set the pointer events to none when mouse leaves the map area
+        });
+    });
+       </script>-->
     </div><!--/map-->
     <div class="contact">
       <div class="contact-content">
@@ -36,25 +72,31 @@ layout: default
           {{site.data.contact[0].Contact_Message | markdownify }}
           <p class="email"><i class="fa fa-envelope"></i> <a href="mailto:{{site.data.contact[0].Church_email}}">{{site.data.contact[0].Church_email}}</a></p>
             <ul class="address">
-              <li><i class="fa fa-phone"></i> <span>{{site.data.contact[0].Phone_number }} </span></li>
-              <li><i class="fa fa-map-marker"></i> <span>{{site.data.contact[0].Address_1}} {{site.data.contact[0].Address_2}}</span></li>
-              <li><span>{{site.data.contact[0].City }}, {{site.data.contact[0].State }} {{site.data.contact[0].Zip }} </span></li>
-              <li> 
-                  {% if site.data.contact[0].Facebook %}<a href="{{site.data.contact[0].Facebook}}"><i class="fa fa-facebook"></i></a> {% endif %}
-                    {% if site.data.contact[0].Twitter %}<a href="{{ site.data.contact[0].Twitter }}"><i class="fa fa-twitter"></i></a> {% endif %}
-                    {% if site.data.contact[0].Youtube %}<a href="{{ site.data.contact[0].Youtube }}"><i class="fa fa-youtube"></i></a> {% endif %}
-                  <a href="http://airtable.com"><i class="fa fa-gear"></i></a></li>
+              <li>{{site.data.contact[0].Phone_number }}</li>
+              <li>{{site.data.contact[0].Address_1}} {{site.data.contact[0].Address_2}}</li>
+              <li>{{site.data.contact[0].City }}, {{site.data.contact[0].State }} {{site.data.contact[0].Zip }}</li>
+              <li class="social"> 
+                  {% if site.data.contact[0].Facebook %}<a href="{{site.data.contact[0].Facebook}}">
+                  <span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+</span></a> {% endif %}
+                    {% if site.data.contact[0].Twitter %}<a href="{{ site.data.contact[0].Twitter }}"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+</span></a> {% endif %}
+                    {% if site.data.contact[0].Youtube %}<a href="{{ site.data.contact[0].Youtube }}"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+</span></a> {% endif %}
+                  <a href="http://airtable.com"><span class="fa-stack fa-lg">
+  <i class="fa fa-circle fa-stack-2x"></i>
+  <i class="fa fa-gear fa-stack-1x fa-inverse"></i>
+</span></i></a></li>
           </ul><!--/address-->
           <ul class="social">
             
           </ul><!--/social-->
       </div><!--/contact-content-->
     </div><!--/contact-->
-    <div class="photos">
-      <div class="photos-inner" id="sqr-gallery">
-      {% for img in site.data.images[0].Images  limit: 8 %}
-      
-      <img data-src="{{img.url}}" data-thumb="{{img.thumbnails.large.url }}" src="{{img.url}}"> 
-      {% endfor %}
-      </div><!--/photos-inner-->
-    </div><!--/photos-->
+   

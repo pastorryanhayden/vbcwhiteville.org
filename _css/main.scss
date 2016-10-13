@@ -2,7 +2,7 @@
 
 @import 'foundation-sites/scss/foundation';
 @import 'motion-ui/motion-ui';
-     
+@import 'settings';   
  
 @include foundation-off-canvas;
 
@@ -51,8 +51,11 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-@import 'settings';
+
 @import "components/mainImage";
 @import "components/main";
+@import "components/slick";   
 @import "components/gallery";
-@import "components/contact";   
+@import "components/contact"; 
+@import "components/map";  
+
